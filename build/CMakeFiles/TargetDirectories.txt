@@ -1,0 +1,4 @@
+/home/ccc/Documents/umsa/g4_hola_mundo/build/CMakeFiles/hola_mundo.dir
+/home/ccc/Documents/umsa/g4_hola_mundo/build/CMakeFiles/Hola_mundo.dir
+/home/ccc/Documents/umsa/g4_hola_mundo/build/CMakeFiles/edit_cache.dir
+/home/ccc/Documents/umsa/g4_hola_mundo/build/CMakeFiles/rebuild_cache.dir
