@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/hola_mundo.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/hola_mundo.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/hola_mundo.cc",
+  "output": "CMakeFiles/hola_mundo.dir/hola_mundo.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/action.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/action.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/action.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/action.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/bloque.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/bloque.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/bloque.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/bloque.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/construction.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/construction.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/construction.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/construction.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/detector.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/detector.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/detector.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/detector.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/generator.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/generator.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/generator.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/generator.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/physics.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/physics.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/physics.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/physics.cc.o"
+},
+{
+  "directory": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build",
+  "command": "/usr/bin/g++ -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_RAYTRACERX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DG4VIS_USE_TOOLSSG_X11_ZB -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -I/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include -isystem /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets -g -fPIC -o CMakeFiles/hola_mundo.dir/source/run.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc",
+  "file": "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc",
+  "output": "CMakeFiles/hola_mundo.dir/source/run.cc.o"
+}
+]
