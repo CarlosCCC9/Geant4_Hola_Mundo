@@ -1,4 +1,0 @@
-/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles/hola_mundo.dir
-/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles/Hola_mundo.dir
-/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles/edit_cache.dir
-/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles/rebuild_cache.dir
