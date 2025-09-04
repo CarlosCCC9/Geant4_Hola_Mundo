@@ -1,6 +1,4 @@
-/run/numberOfThreads 12
 /run/initialize
-/run/reinitializeGeometry
 
 /gps/particle gamma
 /gps/pos/type Plane
@@ -12,4 +10,5 @@
 /gps/ene/type Mono
 /gps/ene/mono 300 MeV
 
-/run/beamOn 10000
+/run/reinitializeGeometry
+/run/beamOn 1000

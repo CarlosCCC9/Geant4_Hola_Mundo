@@ -2,7 +2,7 @@
 
 geometry_construct::geometry_construct(){
 
-    nblocks=10;
+    nblocks=100;
 
     DefineMaterials();
 }
@@ -58,25 +58,11 @@ G4VPhysicalVolume *geometry_construct::Construct(){
     solidPlaca = new G4Box("solidPlaca", xPlaca, yPlaca, zPlaca/nblocks);
     logicPlaca = new G4LogicalVolume(solidPlaca, gold, "logicPlaca");
 
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,0),logicPlaca, "physPlaca", logicWorld, false, 0, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-2*cm),logicPlaca, "physPlaca", logicWorld, false, 1, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-4*cm),logicPlaca, "physPlaca", logicWorld, false, 2, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-6*cm),logicPlaca, "physPlaca", logicWorld, false, 3, true);
-      
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-8*cm),logicPlaca, "physPlaca", logicWorld, false, 4, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-10*cm),logicPlaca, "physPlaca", logicWorld, false, 5, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-12*cm),logicPlaca, "physPlaca", logicWorld, false, 6, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-14*cm),logicPlaca, "physPlaca", logicWorld, false, 7, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-16*cm),logicPlaca, "physPlaca", logicWorld, false, 8, true);
-
-    physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,-18*cm),logicPlaca, "physPlaca", logicWorld, false, 9, true);
+    //Divide zPlaca in nblocks parts and place them one after another
+    for(G4int i=0; i<nblocks; i++){
+        G4double zpos = -zPlaca + (i*2*zPlaca/nblocks) + (zPlaca/nblocks);
+        physPlaca = new G4PVPlacement(0, G4ThreeVector(0,0,zpos), logicPlaca, "physPlaca", logicWorld, false, i, true);
+    }
 
 /*
     G4int zpos=0*cm;
