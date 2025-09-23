@@ -158,19 +158,17 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
  
         G4AnalysisManager *man = G4AnalysisManager::Instance();
 
-        man->FillNtupleIColumn(2, 0, evt);
-        man->FillNtupleIColumn(2, 1, type);
-        man->FillNtupleDColumn(2, 2, posPhoton[0]);
-        man->FillNtupleDColumn(2, 3, posPhoton[1]);
-        man->FillNtupleDColumn(2, 4, posPhoton[2]);
-        man->FillNtupleDColumn(2, 5, wlen);
-        man->FillNtupleDColumn(2, 6, nrg);
-        man->FillNtupleDColumn(2, 7, time);
-        man->FillNtupleIColumn(2, 8, type_proc);
-        man->FillNtupleDColumn(2, 9, nrg_dep);
-        man->FillNtupleIColumn(2, 10, parentID);
-        man->FillNtupleIColumn(2, 11, step_num);
-        man->AddNtupleRow(2);
+        man->FillNtupleIColumn(1, 0, evt);
+        man->FillNtupleDColumn(1, 1, posPhoton[0]);
+        man->FillNtupleDColumn(1, 2, posPhoton[1]);
+        man->FillNtupleDColumn(1, 3, posPhoton[2]);
+        man->FillNtupleDColumn(1, 4, wlen);
+        man->FillNtupleDColumn(1, 5, nrg);
+        man->FillNtupleDColumn(1, 6, nrg_dep);
+        man->FillNtupleDColumn(1, 7, time);
+        man->FillNtupleIColumn(1, 8, type_proc);
+        man->FillNtupleIColumn(1, 9, parentID);
+        man->AddNtupleRow(1);
     }
 
     return true;

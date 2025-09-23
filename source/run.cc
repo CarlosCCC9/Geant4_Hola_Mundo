@@ -21,15 +21,12 @@ run_act::run_act(){
   man->CreateNtupleDColumn("fX");
   man->CreateNtupleDColumn("fY");
   man->CreateNtupleDColumn("fZ");
-  man->CreateNtupleDColumn("fPx");
-  man->CreateNtupleDColumn("fPy");
-  man->CreateNtupleDColumn("fPz");
-  man->CreateNtupleDColumn("fTime");
+  man->CreateNtupleDColumn("fWlen");
   man->CreateNtupleDColumn("fNrg");
-  man->CreateNtupleIColumn("fCopyNo");
-  man->CreateNtupleDColumn("fDetX");
-  man->CreateNtupleDColumn("fDetY");
-  man->CreateNtupleDColumn("fDetZ");
+  man->CreateNtupleDColumn("fNrg_Dep");
+  man->CreateNtupleDColumn("fTime");
+  man->CreateNtupleIColumn("fProc_Type");
+  man->CreateNtupleIColumn("fPID");
   man->FinishNtuple(1);
 
 }
