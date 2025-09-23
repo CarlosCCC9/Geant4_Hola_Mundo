@@ -10,24 +10,26 @@ geometry_construct::~geometry_construct(){
 
 
 void geometry_construct::DefineMaterials(){
-    G4NistManager *nist = G4NistManager::Instance();
-
-    air = nist->FindOrBuildMaterial("G4_AIR");
-    water = nist->FindOrBuildMaterial("G4_Water");
-    pyrex= nist->FindOrBuildMaterial("G4_Pyrex_Glass");
-    polypropylene = nist->FindOrBuildMaterial("G4_POLYPROPYLENE");
-
-    //Water porperties
-    std::ifstream datafile;
+  G4NistManager *nist = G4NistManager::Instance();
+    
+  //Material definition
+  air= nist->FindOrBuildMaterial("G4_AIR");
+  water = nist->FindOrBuildMaterial("G4_WATER");
+  pyrex= nist->FindOrBuildMaterial("G4_Pyrex_Glass");
+  polypropylene = nist->FindOrBuildMaterial("G4_POLYPROPYLENE");  
+  stainless_steel = nist->FindOrBuildMaterial("G4_STAINLESS-STEEL");
+    
+  //Water porperties
+  std::ifstream datafile;
   
-    G4int Nentries=23;
-    G4double water_rind_energy[Nentries]={};
-    G4double water_rindex[Nentries]={};
+  G4int Nentries=23;
+  G4double water_rind_energy[Nentries]={};
+  G4double water_rindex[Nentries]={};
   
-    datafile.open("water_rind.dat");
-    G4int n=0;
-    while(1){
-      G4double nrg,rind;
+  datafile.open("water_rind.dat");
+  G4int n=0;
+  while(1){
+    G4double nrg,rind;
       datafile >> nrg >> rind;
       if(datafile.eof())
         break;
@@ -44,16 +46,7 @@ void geometry_construct::DefineMaterials(){
     mptWater->AddProperty("RINDEX", water_rind_energy, water_rindex, Nentries);
     mptWater->AddProperty("ABSLENGTH", water_abs_nrg, water_abs_lngt, 29);
     water->SetMaterialPropertiesTable(mptWater);
-
-    //Pyrex
-    //Pyrex properties
-      //https://www.pmoptics.com/corning_pyrex.html 
-    G4double pyrex_nrg[5]= {1239.8*eV/643.8, 1239.8*eV/587.6, 1239.8*eV/546.1, 1239.8*eV/514.5, 1239.8*eV/486.1};
-    G4double pyrex_rindex[5]={1.472, 1.474, 1.476, 1.477, 1.479};
-    G4MaterialPropertiesTable *mptPyrex = new G4MaterialPropertiesTable();
-    mptPyrex->AddProperty("RINDEX", pyrex_nrg, pyrex_rindex, 5);
-    pyrex->SetMaterialPropertiesTable(mptPyrex);
-
+    
     //Propiedades del aire
     G4double air_nrg[2]={1.239841939*eV/0.9, 1.239841939*eV/0.2};
     G4double air_rindex[2]={1.0, 1.0};
@@ -61,7 +54,14 @@ void geometry_construct::DefineMaterials(){
     G4MaterialPropertiesTable *mptAir = new G4MaterialPropertiesTable();
     mptAir->AddProperty("RINDEX", air_nrg, air_rindex, 2);
     air->SetMaterialPropertiesTable(mptAir);
-
+  
+    //Pyrex properties
+      //https://www.pmoptics.com/corning_pyrex.html 
+    G4double pyrex_nrg[5]= {1239.8*eV/643.8, 1239.8*eV/587.6, 1239.8*eV/546.1, 1239.8*eV/514.5, 1239.8*eV/486.1};
+    G4double pyrex_rindex[5]={1.472, 1.474, 1.476, 1.477, 1.479};
+    G4MaterialPropertiesTable *mptPyrex = new G4MaterialPropertiesTable();
+    mptPyrex->AddProperty("RINDEX", pyrex_nrg, pyrex_rindex, 5);
+    pyrex->SetMaterialPropertiesTable(mptPyrex);
 }
 
 void geometry_construct::Tank(){
@@ -78,14 +78,30 @@ void geometry_construct::Tank(){
     G4double phiStart = 0.0*deg;
     G4double spanningPhi = 360.0*deg;
 
+    //elipsoide inferior
+    G4double semiAxis=0.5*pmt_diam;
+    G4double bot_z = -6*cm;
+    G4double top_z = 0*cm;
+    G4double zsemi = 8*cm;
+  
+    solidPMT_struct = new G4Ellipsoid("solidPMT_struct", semiAxis,semiAxis, zsemi, bot_z,top_z);
+  
+    //tubo
+    G4double str_h = 13.0*cm;
+    G4double str_diam=7.5*cm;
+  
+    solidStruct = new G4Tubs("solidStruct", pmt_innerRad, 0.5*str_diam,0.5*str_h,phiStart,spanningPhi);
+
     //elipsoide superior
     G4double zsemi_2 = 7.*cm;
-    G4double semiAxis=0.5*pmt_diam;
 
-    G4double bot_z = -6*cm;
-    G4double str_h = 13.0*cm;
 
-    solidDetector = new G4Ellipsoid("solidPMT", semiAxis,semiAxis, zsemi_2, 0*cm, zsemi_2);
+    solidPMT = new G4Ellipsoid("solidPMT", semiAxis,semiAxis, zsemi_2, 0*cm, zsemi_2);
+  
+    //Unir Estructura PMT
+    G4UnionSolid *fullPMT = new G4UnionSolid("fullPMT", solidPMT_struct, solidStruct,0,G4ThreeVector(0,0,bot_z-0.5*str_h));
+
+    //solidDetector = new G4Ellipsoid("solidPMT", semiAxis,semiAxis, zsemi_2, 0*cm, zsemi_2);
 
     //Tanque cobertura
     G4double Tank_innerRad = 0.*cm;
@@ -117,16 +133,19 @@ void geometry_construct::Tank(){
     logicTank = new G4LogicalVolume(solidTank1, polypropylene, "logicTank");
     logicWater = new G4LogicalVolume(solidWater, water, "logicWater");
     logicAir = new G4LogicalVolume(solidAir, air, "logicAir");
-    logicDetector = new G4LogicalVolume(solidDetector,pyrex,"logicPMT_struct");
+    logicPMT = new G4LogicalVolume(solidPMT,pyrex,"logicPMT_struct");
+    logicStruct = new G4LogicalVolume(fullPMT, stainless_steel, "logicStruct");
 
     //Fisicos
     physTank = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicTank, "physTank", logicWorld, false, 0, true);
     physWater = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*Tankh+Tank_wall_width+0.5*waterh), logicWater, "physWater", logicWorld, false,0,true);
     physAir = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*Tankh+Tank_wall_width+waterh+0.5*diff_h), logicAir, "physAir", logicWorld, false,0,true);
     //new rotation matrix in the z-axis about 180 degrees
-    G4RotationMatrix* rotm = new G4RotationMatrix();
-    rotm->rotateZ(180.*deg);
-    physDetector = new G4PVPlacement(rotm, G4ThreeVector(0,0,0.5*Tankh+Tank_wall_width+str_h-bot_z),logicDetector,"physPMT",logicWorld,false,0,true);
+    physPMT = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicPMT,"physPMT",logicWater,false,0,true);
+    physStruct = new G4PVPlacement(0,G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicStruct,"physStruct",logicWater,false,0,true);
+    //G4RotationMatrix* rotm = new G4RotationMatrix();
+    //rotm->rotateZ(180.*deg);
+    //physDetector = new G4PVPlacement(rotm, G4ThreeVector(0,0,0.5*Tankh+Tank_wall_width+str_h-bot_z),logicDetector,"physPMT",logicWorld,false,0,true);
     
     
     //physDetector = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicDetector,"physPMT",logicWater,false,0,true);
@@ -180,7 +199,7 @@ void geometry_construct::ConstructSDandField(){
     sensDet = new sens_det("SensitiveDetector");
     SDman->AddNewDetector(sensDet);
   }
-  logicDetector->SetSensitiveDetector(sensDet);
+  logicPMT->SetSensitiveDetector(sensDet);
 
   if(SDman->FindSensitiveDetector("WaterSensitiveDetector", false)){
       waterSens = SDman->FindSensitiveDetector("WaterSensitiveDetector", false);

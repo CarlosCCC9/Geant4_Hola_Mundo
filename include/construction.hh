@@ -41,15 +41,14 @@ class geometry_construct : public G4VUserDetectorConstruction{
         
         virtual void ConstructSDandField();
 
-        G4Material *air, *water, *pyrex, *polypropylene;
+        G4Material *air, *water, *pyrex, *polypropylene, *stainless_steel;
 
         G4Box *solidWorld;
-        G4Ellipsoid *solidDetector;
-        G4Tubs *solidTank, *solidTank_red, *solidWater, *solidAir;
+        G4Ellipsoid *solidDetector, *solidPMT_struct, *solidPMT;
+        G4Tubs *solidTank, *solidTank_red, *solidWater, *solidAir, *solidStruct;
 
-        G4LogicalVolume *logicWorld, *logicCrystal, *logicTank, *logicWater, *logicAir, *logicDetector;
-        G4VPhysicalVolume *physWorld, *physCrystal, *physDetector, *physTank, *physWater, *physAir;
-
+        G4LogicalVolume *logicWorld, *logicTank, *logicWater, *logicAir, *logicCone, *logicPMT, *logicStruct;
+        G4VPhysicalVolume *physWorld, *physTank, *physWater, *physAir, *physCone, *physPMT, *physStruct;
         void DefineMaterials();
 
 };
