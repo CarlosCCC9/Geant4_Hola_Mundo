@@ -34,7 +34,7 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
 
         /*
         G4bool isFirstStep = aStep->IsFirstStepInVolume();
-        
+
         if(isFirstStep){
             G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
             G4ThreeVector posParticle = preStepPoint->GetPosition();
