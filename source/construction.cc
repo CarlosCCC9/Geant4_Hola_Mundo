@@ -141,14 +141,12 @@ void geometry_construct::Tank(){
     physWater = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*Tankh+Tank_wall_width+0.5*waterh), logicWater, "physWater", logicWorld, false,0,true);
     physAir = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*Tankh+Tank_wall_width+waterh+0.5*diff_h), logicAir, "physAir", logicWorld, false,0,true);
     //new rotation matrix in the z-axis about 180 degrees
-    physPMT = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicPMT,"physPMT",logicWater,false,0,true);
-    physStruct = new G4PVPlacement(0,G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicStruct,"physStruct",logicWater,false,0,true);
-    //G4RotationMatrix* rotm = new G4RotationMatrix();
-    //rotm->rotateZ(180.*deg);
-    //physDetector = new G4PVPlacement(rotm, G4ThreeVector(0,0,0.5*Tankh+Tank_wall_width+str_h-bot_z),logicDetector,"physPMT",logicWorld,false,0,true);
-    
-    
-    //physDetector = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicDetector,"physPMT",logicWater,false,0,true);
+    //physPMT = new G4PVPlacement(0, G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicPMT,"physPMT",logicWater,false,0,true);
+    //physStruct = new G4PVPlacement(0,G4ThreeVector(0,0,-0.5*waterh+str_h-bot_z),logicStruct,"physStruct",logicWater,false,0,true);
+    G4RotationMatrix* rotm = new G4RotationMatrix();
+    rotm->rotateX(180.*deg);
+    physPMT = new G4PVPlacement(rotm, G4ThreeVector(0,0,0.5*Tankh+Tank_wall_width+str_h*0.5+0.5*bot_z+1.*cm),logicPMT,"physPMT",logicWorld,false,0,true);
+   
 
     //Superficie Optica
     G4OpticalSurface *tyvek = new G4OpticalSurface("tyvek");

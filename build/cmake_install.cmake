@@ -1,4 +1,4 @@
-# Install script for directory: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo
+# Install script for directory: /home/ccc/Documents/umsa/Geant4_Hola_Mundo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ccc/Documents/umsa/Geant4_Hola_Mundo/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

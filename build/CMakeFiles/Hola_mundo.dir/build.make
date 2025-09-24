@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo
+CMAKE_SOURCE_DIR = /home/ccc/Documents/umsa/Geant4_Hola_Mundo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build
+CMAKE_BINARY_DIR = /home/ccc/Documents/umsa/Geant4_Hola_Mundo/build
 
 # Utility rule file for Hola_mundo.
 
@@ -81,6 +81,6 @@ CMakeFiles/Hola_mundo.dir/clean:
 .PHONY : CMakeFiles/Hola_mundo.dir/clean
 
 CMakeFiles/Hola_mundo.dir/depend:
-	cd /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles/Hola_mundo.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ccc/Documents/umsa/Geant4_Hola_Mundo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ccc/Documents/umsa/Geant4_Hola_Mundo /home/ccc/Documents/umsa/Geant4_Hola_Mundo /home/ccc/Documents/umsa/Geant4_Hola_Mundo/build /home/ccc/Documents/umsa/Geant4_Hola_Mundo/build /home/ccc/Documents/umsa/Geant4_Hola_Mundo/build/CMakeFiles/Hola_mundo.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/Hola_mundo.dir/depend
 
