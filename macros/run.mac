@@ -1,3 +1,8 @@
+/process/optical/cerenkov/setMaxPhotons 100
+/process/optical/cerenkov/setMaxBetaChange 10
+/process/optical/cerenkov/setTrackSecondariesFirst true
+
+/run/numberOfThreads 6
 /run/initialize
 /run/reinitializeGeometry
-/run/beamOn 100
+/run/beamOn 1

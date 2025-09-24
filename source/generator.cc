@@ -16,8 +16,8 @@ generator::generator(){
     G4ParticleDefinition *particle = particleTable->FindParticle("mu-");
   
     m_particleGun->SetParticleDefinition(particle);
-    m_particleGun->SetParticleEnergy(0.*GeV);
-    m_particleGun->SetParticlePosition(G4ThreeVector(0,0,1.1*m));
+    m_particleGun->SetParticleEnergy(0.2*GeV);
+    m_particleGun->SetParticlePosition(G4ThreeVector(30*cm,0,1.1*m));
     m_particleGun->SetParticleMomentumDirection(G4ThreeVector(0,0,-1));
 
 

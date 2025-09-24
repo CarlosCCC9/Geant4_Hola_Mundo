@@ -1,14 +1,14 @@
 #include "water.hh"
 
 water_sensitive::water_sensitive(G4String name):G4VSensitiveDetector(name){
-    fEnergydep_w = 0;
+    
 }
 
 water_sensitive::~water_sensitive(){
 }
 
 void water_sensitive::Initialize(G4HCofThisEvent *){
-    fEnergydep_w = 0;
+    
 }
 
 void water_sensitive::EndOfEvent(G4HCofThisEvent *){
@@ -17,60 +17,44 @@ void water_sensitive::EndOfEvent(G4HCofThisEvent *){
 
 G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
 
-    /*
-    //Gammas primarios
-    
-    G4bool isFirstStep = aStep->IsFirstStepInVolume();
-    G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
+
     G4ParticleDefinition *particle = aStep->GetTrack()->GetDefinition();
-    const G4VProcess *proc = aStep->GetTrack()->GetCreatorProcess();
-    const G4String& creator= proc ? proc->GetProcessName() : " ";
 
-    if(isFirstStep){
-        if (particle == G4Gamma::GammaDefinition()){
-            if(creator==" "){
+    if (particle == G4Electron::Definition() || particle == G4MuonMinus::Definition()) {
+        G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
+        G4ThreeVector posParticle = preStepPoint->GetPosition();
+        G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
+        G4double nrg = preStepPoint->GetTotalEnergy();
+        G4double time = preStepPoint->GetGlobalTime();
 
-                G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
-                G4StepPoint *postStepPoint = aStep->GetPostStepPoint();
+        const G4VProcess *proc = aStep->GetTrack()->GetCreatorProcess();
+        const G4String& creator= proc ? proc->GetProcessName() : " ";
 
-                G4ThreeVector prePos = preStepPoint->GetPosition();
-                G4ThreeVector postPos = postStepPoint->GetPosition();
+        G4cout<<particle->GetParticleName()<<"\t"<<creator<<"\t"<<time<<"\t"<<nrg<<"\t"<<step_num<<G4endl;
 
-                const G4VProcess *preProc = preStepPoint->GetProcessDefinedStep();
-                const G4String& preProcName = preProc ? preProc->GetProcessName() : " ";
+        /*
+        G4bool isFirstStep = aStep->IsFirstStepInVolume();
+        
+        if(isFirstStep){
+            G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
+            G4ThreeVector posParticle = preStepPoint->GetPosition();
+            G4ThreeVector momParticle = preStepPoint->GetMomentum();
+            G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
+            G4double time = preStepPoint->GetGlobalTime();
+            G4double nrg = preStepPoint->GetTotalEnergy();
+            G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
 
-                const G4VProcess *postProc = postStepPoint->GetProcessDefinedStep();
-                const G4String& postProcName = postProc ? postProc->GetProcessName() : " ";
+            const G4VProcess *proc = aStep->GetTrack()->GetCreatorProcess();
+            const G4String& creator= proc ? proc->GetProcessName() : " ";
 
-                G4int evt = G4RunManager::GetRunManager()->GetCurrentEvent()->GetEventID();
-                G4double nrg = preStepPoint->GetTotalEnergy();
-                G4double nrg_dep = aStep->GetTotalEnergyDeposit();
+            G4cout<<particle->GetParticleName()<<"\t"<<creator<<"\t"<<time<<"\t"<<posParticle[2]<<"\t"<<step_num<<G4endl;
 
-                if(postProcName == "conv"){
-                    G4AnalysisManager *man = G4AnalysisManager::Instance();
+        }
+        */
+    }   
 
-                    man->FillNtupleIColumn(2, 0, evt);
-                    man->FillNtupleDColumn(2, 1, prePos[0]);
-                    man->FillNtupleDColumn(2, 2, prePos[1]);
-                    man->FillNtupleDColumn(2, 3, prePos[2]);                    
-                    man->FillNtupleDColumn(2, 4, aStep->GetDeltaPosition().mag());
-                    man->FillNtupleDColumn(2, 5, nrg);
-                    man->FillNtupleIColumn(2, 6, step_num);
-                    man->AddNtupleRow(2);
-                }
-    */
-                /*
-                G4cout<<"///////////////////"<<G4endl;
-                G4cout<<"Length "<<aStep->GetDeltaPosition().mag()<<" Creator: "<<creator<<" Proc: "<<preProcName<<" "<<postProcName<<G4endl;
-                G4cout<<"\n"<<G4endl;
-                */
-     //       }
-    //    }
 
-            
-   // }
-    
-
+    /*
     G4bool isFirstStep = aStep->IsFirstStepInVolume();
     G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
 
@@ -155,7 +139,7 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
             G4cout<<G4endl;
         }
         */
- 
+ /*
         G4AnalysisManager *man = G4AnalysisManager::Instance();
 
         man->FillNtupleIColumn(1, 0, evt);
@@ -170,6 +154,6 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
         man->FillNtupleIColumn(1, 9, parentID);
         man->AddNtupleRow(1);
     }
-
+*/
     return true;
 }
