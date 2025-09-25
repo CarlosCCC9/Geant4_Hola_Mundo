@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import ROOT
+from scipy.interpolate import interp1d
 
 #Enable implicit multi-threading
 ROOT.ROOT.EnableImplicitMT()
@@ -51,3 +52,30 @@ with open("energy_distribution.txt", "w") as f:
     f.write("# Bin Centers (GeV), Muon Mean, Muon Std\n")
     for center, mean, std in zip(bin_centers, gamma_mean, gamma_std):
         f.write(f"{center}, {mean}, {std}\n")
+
+# Normalize to PDF
+pdf = gamma_mean / np.sum(gamma_mean * bin_widths)
+
+# Compute CDF
+cdf = np.cumsum(pdf * bin_widths)
+cdf /= cdf[-1]  # Normalize to 1
+
+energy_sampler = interp1d(cdf, bin_centers, kind='linear', bounds_error=False, fill_value=(bin_centers[0], bin_centers[-1]))
+
+# To sample energies:
+random_uniforms = np.random.uniform(size=10000)
+sampled_energies = energy_sampler(random_uniforms)
+
+np.savetxt("sampled_energies.dat", sampled_energies)
+
+#plot the sampled energies
+plt.figure(figsize=(10, 6))
+plt.hist(sampled_energies, bins=100, density=True, alpha=0.7, color='blue', label='Sampled Energies')
+plt.xlabel('Energy (GeV)')
+plt.ylabel('Density')
+plt.title('Sampled Energy Distribution')
+plt.xscale('log')
+plt.yscale('log')
+plt.grid(True)
+plt.legend()
+plt.show()
