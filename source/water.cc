@@ -21,18 +21,6 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
     G4ParticleDefinition *particle = aStep->GetTrack()->GetDefinition();
 
     if (particle == G4Electron::Definition() || particle == G4MuonMinus::Definition()) {
-        G4StepPoint *preStepPoint = aStep->GetPreStepPoint();
-        G4ThreeVector posParticle = preStepPoint->GetPosition();
-        G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
-        G4double nrg = preStepPoint->GetTotalEnergy();
-        G4double time = preStepPoint->GetGlobalTime();
-
-        const G4VProcess *proc = aStep->GetTrack()->GetCreatorProcess();
-        const G4String& creator= proc ? proc->GetProcessName() : " ";
-
-        G4cout<<particle->GetParticleName()<<"\t"<<creator<<"\t"<<time<<"\t"<<nrg<<"\t"<<step_num<<G4endl;
-
-        /*
         G4bool isFirstStep = aStep->IsFirstStepInVolume();
 
         if(isFirstStep){
@@ -43,16 +31,50 @@ G4bool water_sensitive::ProcessHits(G4Step *aStep, G4TouchableHistory *){
             G4double time = preStepPoint->GetGlobalTime();
             G4double nrg = preStepPoint->GetTotalEnergy();
             G4int step_num = aStep->GetTrack()->GetCurrentStepNumber();
+            G4double nrg_dep = aStep->GetTotalEnergyDeposit();
 
             const G4VProcess *proc = aStep->GetTrack()->GetCreatorProcess();
             const G4String& creator= proc ? proc->GetProcessName() : " ";
 
-            G4cout<<particle->GetParticleName()<<"\t"<<creator<<"\t"<<time<<"\t"<<posParticle[2]<<"\t"<<step_num<<G4endl;
+            //G4cout<<particle->GetParticleName()<<"\t"<<creator<<"\t"<<time<<"\t"<<posParticle[2]<<"\t"<<step_num<<G4endl;
+            G4int type_proc=0;
+            G4int type=0;
+
+            if(particle == G4Electron::Definition()){
+                type=1;
+            }
+            else if(particle == G4MuonMinus::Definition()){
+                type=2;
+            }
+            else{
+                type=0;
+            }
+
+            if(creator=="Decay"){
+                type_proc=1;
+            }
+            else if(creator==" "){
+                type_proc=2;
+            }
+            else{
+                type_proc=0;
+            }
+
+            G4AnalysisManager *man = G4AnalysisManager::Instance();
+
+            man->FillNtupleIColumn(1, 0, evt);
+            man->FillNtupleDColumn(1, 1, posParticle[0]);
+            man->FillNtupleDColumn(1, 2, posParticle[1]);
+            man->FillNtupleDColumn(1, 3, posParticle[2]);
+            man->FillNtupleDColumn(1, 4, nrg);
+            man->FillNtupleDColumn(1, 5, nrg_dep);
+            man->FillNtupleDColumn(1, 6, time);
+            man->FillNtupleIColumn(1, 7, type);
+            man->FillNtupleIColumn(1, 8, type_proc);
+            man->AddNtupleRow(1);
 
         }
-        */
-    }   
-
+    }
 
     /*
     G4bool isFirstStep = aStep->IsFirstStepInVolume();

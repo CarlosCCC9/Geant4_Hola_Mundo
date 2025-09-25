@@ -21,12 +21,11 @@ run_act::run_act(){
   man->CreateNtupleDColumn("fX");
   man->CreateNtupleDColumn("fY");
   man->CreateNtupleDColumn("fZ");
-  man->CreateNtupleDColumn("fWlen");
   man->CreateNtupleDColumn("fNrg");
   man->CreateNtupleDColumn("fNrg_Dep");
   man->CreateNtupleDColumn("fTime");
+  man->CreateNtupleIColumn("fType");
   man->CreateNtupleIColumn("fProc_Type");
-  man->CreateNtupleIColumn("fPID");
   man->FinishNtuple(1);
 
 }
