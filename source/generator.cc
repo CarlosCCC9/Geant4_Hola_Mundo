@@ -42,12 +42,15 @@ void generator::GeneratePrimaries(G4Event *anEvent){
 
         //Position
         G4double rad = 1.*m;
-        G4double rad_real = 0.4*m;
+        G4double rad_real = 0.5*80*cm;
         G4double x,y;
         G4double theta=0.0;
         G4double phi=0.0;
         G4double sintheta, sinphi,costheta,cosphi, Phi, MaxPhi, MinPhi, MaxTheta, MinTheta,px,py,pz;
         G4double ax,bx,cx,t1,t2,disc;
+        G4double z_ini=1.1*m;
+        G4double tankh_half=0.5*m;
+
         x=0.1*m; y=0.1*m;
         MaxPhi = 2.*M_PI;
         MinPhi = 0.;
@@ -64,7 +67,7 @@ void generator::GeneratePrimaries(G4Event *anEvent){
             x=(x*2.*rad)-rad;
             y=(y*2.*rad)-rad;
         }
-        m_particleGun->SetParticlePosition(G4ThreeVector(x,y,1.1*m));
+        m_particleGun->SetParticlePosition(G4ThreeVector(x,y,z_ini));
 
 
         while(check == false){
@@ -100,8 +103,8 @@ void generator::GeneratePrimaries(G4Event *anEvent){
                 if (  disc >= 0){
                     t1 = (-bx + std::sqrt(disc))/(2.*ax);
                     t2 = (-bx - std::sqrt(disc))/(2.*ax);
-        
-                    if ( (((1.7*m + pz*t1) < 1.65*m) && ((1.7*m + pz*t1) > -1.65*m)) || (((1.7*m + pz*t2) < 1.65*m) && ((1.7*m + pz*t2) > -1.65*m)) ){
+
+                    if ( (((z_ini + pz*t1) < tankh_half) && ((z_ini + pz*t1) > -tankh_half)) || (((z_ini + pz*t2) < tankh_half) && ((z_ini + pz*t2) > -tankh_half)) ){
                         check = true;
                     }
                     else{
