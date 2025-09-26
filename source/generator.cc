@@ -6,7 +6,7 @@ generator::generator(){
     fMessenger = new G4GenericMessenger(this, "/generator/", "Primary generator control");
   fMessenger->DeclareProperty("gun", gun, "Type of primary");
 
-    deg=0;
+    deg=1;
 
     //Gun
     m_particleGun = new G4ParticleGun(1);
