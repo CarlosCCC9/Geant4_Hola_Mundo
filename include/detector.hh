@@ -16,6 +16,8 @@ class sens_det : public G4VSensitiveDetector{
   public:
     sens_det(G4String);
     ~sens_det();
+    G4bool decayed_muon;
+    G4int photonCount;
       
   private:
     virtual G4bool ProcessHits(G4Step *, G4TouchableHistory *);

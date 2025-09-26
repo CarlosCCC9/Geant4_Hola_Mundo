@@ -16,7 +16,7 @@ run_act::run_act(){
   man->CreateNtupleDColumn("fNrg");
   man->FinishNtuple(0);
 
-  man->CreateNtuple("Block", "Block");
+  man->CreateNtuple("Water", "Water");
   man->CreateNtupleIColumn("fEvent");
   man->CreateNtupleDColumn("fX");
   man->CreateNtupleDColumn("fY");

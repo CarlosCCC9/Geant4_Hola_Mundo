@@ -1,18 +1,15 @@
 #include "detector.hh"
 
 sens_det::sens_det(G4String name):G4VSensitiveDetector(name){
-
 }
 
 sens_det::~sens_det(){
 }
 
 void sens_det::Initialize(G4HCofThisEvent *){
-
 }
 
 void sens_det::EndOfEvent(G4HCofThisEvent *){
-
 }
 
 G4bool sens_det::ProcessHits(G4Step *aStep, G4TouchableHistory *){
@@ -20,6 +17,7 @@ G4bool sens_det::ProcessHits(G4Step *aStep, G4TouchableHistory *){
   G4ParticleDefinition *particle = aStep->GetTrack()->GetDefinition();
 
   if(particle == G4OpticalPhoton::Definition()){
+    
     G4Track *track = aStep->GetTrack();
     track->SetTrackStatus(fStopAndKill);
 
@@ -41,7 +39,9 @@ G4bool sens_det::ProcessHits(G4Step *aStep, G4TouchableHistory *){
     man->FillNtupleDColumn(0, 7, time);
     man->FillNtupleDColumn(0, 8, nrg);
     man->AddNtupleRow(0);
+    
+    return true;
   }
 
-  return true;
+  return false;
 }

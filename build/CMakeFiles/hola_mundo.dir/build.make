@@ -139,10 +139,24 @@ CMakeFiles/hola_mundo.dir/source/detector.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hola_mundo.dir/source/detector.cc.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/detector.cc -o CMakeFiles/hola_mundo.dir/source/detector.cc.s
 
+CMakeFiles/hola_mundo.dir/source/event.cc.o: CMakeFiles/hola_mundo.dir/flags.make
+CMakeFiles/hola_mundo.dir/source/event.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/event.cc
+CMakeFiles/hola_mundo.dir/source/event.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hola_mundo.dir/source/event.cc.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/event.cc.o -MF CMakeFiles/hola_mundo.dir/source/event.cc.o.d -o CMakeFiles/hola_mundo.dir/source/event.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/event.cc
+
+CMakeFiles/hola_mundo.dir/source/event.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hola_mundo.dir/source/event.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/event.cc > CMakeFiles/hola_mundo.dir/source/event.cc.i
+
+CMakeFiles/hola_mundo.dir/source/event.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hola_mundo.dir/source/event.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/event.cc -o CMakeFiles/hola_mundo.dir/source/event.cc.s
+
 CMakeFiles/hola_mundo.dir/source/generator.cc.o: CMakeFiles/hola_mundo.dir/flags.make
 CMakeFiles/hola_mundo.dir/source/generator.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/generator.cc
 CMakeFiles/hola_mundo.dir/source/generator.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hola_mundo.dir/source/generator.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/hola_mundo.dir/source/generator.cc.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/generator.cc.o -MF CMakeFiles/hola_mundo.dir/source/generator.cc.o.d -o CMakeFiles/hola_mundo.dir/source/generator.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/generator.cc
 
 CMakeFiles/hola_mundo.dir/source/generator.cc.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/hola_mundo.dir/source/generator.cc.s: cmake_force
 CMakeFiles/hola_mundo.dir/source/physics.cc.o: CMakeFiles/hola_mundo.dir/flags.make
 CMakeFiles/hola_mundo.dir/source/physics.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/physics.cc
 CMakeFiles/hola_mundo.dir/source/physics.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/hola_mundo.dir/source/physics.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/hola_mundo.dir/source/physics.cc.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/physics.cc.o -MF CMakeFiles/hola_mundo.dir/source/physics.cc.o.d -o CMakeFiles/hola_mundo.dir/source/physics.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/physics.cc
 
 CMakeFiles/hola_mundo.dir/source/physics.cc.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/hola_mundo.dir/source/physics.cc.s: cmake_force
 CMakeFiles/hola_mundo.dir/source/run.cc.o: CMakeFiles/hola_mundo.dir/flags.make
 CMakeFiles/hola_mundo.dir/source/run.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc
 CMakeFiles/hola_mundo.dir/source/run.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/hola_mundo.dir/source/run.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/hola_mundo.dir/source/run.cc.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/run.cc.o -MF CMakeFiles/hola_mundo.dir/source/run.cc.o.d -o CMakeFiles/hola_mundo.dir/source/run.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc
 
 CMakeFiles/hola_mundo.dir/source/run.cc.i: cmake_force
@@ -181,10 +195,24 @@ CMakeFiles/hola_mundo.dir/source/run.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hola_mundo.dir/source/run.cc.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc -o CMakeFiles/hola_mundo.dir/source/run.cc.s
 
+CMakeFiles/hola_mundo.dir/source/stepping.cc.o: CMakeFiles/hola_mundo.dir/flags.make
+CMakeFiles/hola_mundo.dir/source/stepping.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/stepping.cc
+CMakeFiles/hola_mundo.dir/source/stepping.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/hola_mundo.dir/source/stepping.cc.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/stepping.cc.o -MF CMakeFiles/hola_mundo.dir/source/stepping.cc.o.d -o CMakeFiles/hola_mundo.dir/source/stepping.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/stepping.cc
+
+CMakeFiles/hola_mundo.dir/source/stepping.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/hola_mundo.dir/source/stepping.cc.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/stepping.cc > CMakeFiles/hola_mundo.dir/source/stepping.cc.i
+
+CMakeFiles/hola_mundo.dir/source/stepping.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/hola_mundo.dir/source/stepping.cc.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/stepping.cc -o CMakeFiles/hola_mundo.dir/source/stepping.cc.s
+
 CMakeFiles/hola_mundo.dir/source/water.cc.o: CMakeFiles/hola_mundo.dir/flags.make
 CMakeFiles/hola_mundo.dir/source/water.cc.o: /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/water.cc
 CMakeFiles/hola_mundo.dir/source/water.cc.o: CMakeFiles/hola_mundo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/hola_mundo.dir/source/water.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/hola_mundo.dir/source/water.cc.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/hola_mundo.dir/source/water.cc.o -MF CMakeFiles/hola_mundo.dir/source/water.cc.o.d -o CMakeFiles/hola_mundo.dir/source/water.cc.o -c /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/water.cc
 
 CMakeFiles/hola_mundo.dir/source/water.cc.i: cmake_force
@@ -202,9 +230,11 @@ hola_mundo_OBJECTS = \
 "CMakeFiles/hola_mundo.dir/source/bloque.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/construction.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/detector.cc.o" \
+"CMakeFiles/hola_mundo.dir/source/event.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/generator.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/physics.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/run.cc.o" \
+"CMakeFiles/hola_mundo.dir/source/stepping.cc.o" \
 "CMakeFiles/hola_mundo.dir/source/water.cc.o"
 
 # External object files for target hola_mundo
@@ -215,9 +245,11 @@ hola_mundo: CMakeFiles/hola_mundo.dir/source/action.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/bloque.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/construction.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/detector.cc.o
+hola_mundo: CMakeFiles/hola_mundo.dir/source/event.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/generator.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/physics.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/run.cc.o
+hola_mundo: CMakeFiles/hola_mundo.dir/source/stepping.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/source/water.cc.o
 hola_mundo: CMakeFiles/hola_mundo.dir/build.make
 hola_mundo: /home/ccruz9/Software/g4/geant4-v11.3.0-install/lib/libG4Tree.so
@@ -260,7 +292,7 @@ hola_mundo: /home/ccruz9/Software/g4/geant4-v11.3.0-install/lib/libG4global.so
 hola_mundo: /home/ccruz9/Software/g4/geant4-v11.3.0-install/lib/libG4clhep.so
 hola_mundo: /home/ccruz9/Software/g4/geant4-v11.3.0-install/lib/libG4ptl.so.3.0.0
 hola_mundo: CMakeFiles/hola_mundo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable hola_mundo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable hola_mundo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hola_mundo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

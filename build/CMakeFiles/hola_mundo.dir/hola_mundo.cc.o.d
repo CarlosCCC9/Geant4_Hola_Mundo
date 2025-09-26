@@ -967,4 +967,14 @@ CMakeFiles/hola_mundo.dir/hola_mundo.cc.o: \
  /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Geantino.hh \
  /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include/run.hh \
  /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4UserRunAction.hh \
- /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Run.hh
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Run.hh \
+ /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include/event.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4UserEventAction.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Event.hh \
+ /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include/stepping.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4UserSteppingAction.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Step.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4ThreeVector.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4Track.hh \
+ /home/ccruz9/Software/g4/geant4-v11.3.0-install/include/Geant4/G4TrackStatus.hh \
+ /home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/include/construction.hh

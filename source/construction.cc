@@ -125,7 +125,6 @@ void geometry_construct::Tank(){
     solidAir = new G4Tubs("solidAir", Tank_innerRad, 0.5*outerRad,0.5*diff_h,Tank_startAngle,Tank_spanningAngle);
 
     //Subtractions
-
     G4ThreeVector zTrans0(0.,0.,0.5*Tank_wall_width);
     G4SubtractionSolid *solidTank1 = new G4SubtractionSolid("solidTank1", solidTank, solidTank_red,0,zTrans0);
 
@@ -135,6 +134,7 @@ void geometry_construct::Tank(){
     logicAir = new G4LogicalVolume(solidAir, air, "logicAir");
     logicPMT = new G4LogicalVolume(solidPMT,pyrex,"logicPMT_struct");
     logicStruct = new G4LogicalVolume(fullPMT, stainless_steel, "logicStruct");
+    fScoringVolume = logicTank;
 
     //Fisicos
     physTank = new G4PVPlacement(0, G4ThreeVector(0.,0.,0.), logicTank, "physTank", logicWorld, false, 0, true);

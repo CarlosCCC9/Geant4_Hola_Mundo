@@ -13,9 +13,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/bloque.cc" "CMakeFiles/hola_mundo.dir/source/bloque.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/bloque.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/construction.cc" "CMakeFiles/hola_mundo.dir/source/construction.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/construction.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/detector.cc" "CMakeFiles/hola_mundo.dir/source/detector.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/detector.cc.o.d"
+  "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/event.cc" "CMakeFiles/hola_mundo.dir/source/event.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/event.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/generator.cc" "CMakeFiles/hola_mundo.dir/source/generator.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/generator.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/physics.cc" "CMakeFiles/hola_mundo.dir/source/physics.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/physics.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/run.cc" "CMakeFiles/hola_mundo.dir/source/run.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/run.cc.o.d"
+  "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/stepping.cc" "CMakeFiles/hola_mundo.dir/source/stepping.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/stepping.cc.o.d"
   "/home/ccruz9/Documents/umsa/g4_hola/Geant4_Hola_Mundo/source/water.cc" "CMakeFiles/hola_mundo.dir/source/water.cc.o" "gcc" "CMakeFiles/hola_mundo.dir/source/water.cc.o.d"
   )
 

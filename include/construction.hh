@@ -33,6 +33,7 @@ class geometry_construct : public G4VUserDetectorConstruction{
     public:
         geometry_construct();
         ~geometry_construct();
+        G4LogicalVolume *GetScoringVolume() const {return fScoringVolume;}
 
         virtual G4VPhysicalVolume *Construct();
         void Tank();
@@ -50,6 +51,8 @@ class geometry_construct : public G4VUserDetectorConstruction{
         G4LogicalVolume *logicWorld, *logicTank, *logicWater, *logicAir, *logicCone, *logicPMT, *logicStruct;
         G4VPhysicalVolume *physWorld, *physTank, *physWater, *physAir, *physCone, *physPMT, *physStruct;
         void DefineMaterials();
+
+        G4LogicalVolume *fScoringVolume;
 
 };
 
