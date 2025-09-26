@@ -24,12 +24,11 @@ private:
     G4GeneralParticleSource *gps;
     G4ParticleGun *m_particleGun;
     G4GenericMessenger *fMessenger;
-    G4bool gun;
 
     G4int deg, evt;
 
     //Empty array to store sampled energies
-    G4double nrg[10000];
+    G4double nrg[4174];
 
 
 };

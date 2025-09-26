@@ -4,7 +4,7 @@ generator::generator(){
 
     //Modificar el proyecto luego de compilado
     fMessenger = new G4GenericMessenger(this, "/generator/", "Primary generator control");
-  fMessenger->DeclareProperty("gun", gun, "Type of primary");
+  fMessenger->DeclareProperty("deg", deg, "Incidence of primary");
 
     deg=1;
 
@@ -19,14 +19,14 @@ generator::generator(){
     m_particleGun->SetParticlePosition(G4ThreeVector(30*cm,0,1.1*m));
     m_particleGun->SetParticleMomentumDirection(G4ThreeVector(0,0,-1));
 
-    /*
-    for(G4int i=0; i<10000; i++){
+    //Initialize the energy array to zero
+    for(G4int i=0; i<4173; i++){
         nrg[i] = 0;
     }
 
     //Read energy sampling file
     std::ifstream datafile;
-    datafile.open("mu_sampled_energies.dat");
+    datafile.open("filtered_energies.dat");
     G4int i = 0;
     while(1){
         G4double energy;
@@ -37,7 +37,7 @@ generator::generator(){
         i++;
     }
     datafile.close();
-*/
+
 }
 
 generator::~generator(){ 
@@ -47,16 +47,19 @@ generator::~generator(){
 void generator::GeneratePrimaries(G4Event *anEvent){
 
         //Randomly sample an energy from the array
-        //G4int index = G4UniformRand() * 10000;
-        //if(index >= 10000) index = 9999;
-        //G4double energy = nrg[index];
+        G4int index = G4UniformRand() * 4174;
+        if(index >= 4174) index = 4173;
+        G4double energy = nrg[index];
         //Set the particle energy
-        //m_particleGun->SetParticleEnergy(energy*GeV);
-        //m_particleGun->SetParticleEnergy(0.2*GeV);
+        m_particleGun->SetParticleEnergy(energy*GeV);
+
+        //Nrg random between 0.03 and 1 GeV
+        /*
         G4double minEnergy = 0.03*GeV;
         G4double maxEnergy = 1*GeV;
         G4double energy = G4UniformRand() * (maxEnergy - minEnergy) + minEnergy;
         m_particleGun->SetParticleEnergy(energy);
+        */
 
         //Position
         G4double rad = 1.*m;
@@ -106,6 +109,7 @@ void generator::GeneratePrimaries(G4Event *anEvent){
                     x=(x*2.*rad)-rad;
                     y=(y*2.*rad)-rad;
                 }
+                G4cout<<"x: "<<x<<" y: "<<y<<" nrg: "<<energy<<G4endl;
                 m_particleGun->SetParticlePosition(G4ThreeVector(x,y,z_ini));
 
                 while(check == false){

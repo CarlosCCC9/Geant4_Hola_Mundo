@@ -11,7 +11,7 @@ df_decay = ROOT.RDataFrame("DecayTime", name)
 
 
 c1=ROOT.TCanvas()
-hist=df_decay.Filter("fCorrect==0").Histo1D(("hist", "Decay Time", 30, 0, 20000), "fTime")
+hist=df_decay.Filter("fCorrect==5").Histo1D(("hist", "Decay Time", 30, 0, 20000), "fTime")
 hist.SetTitle("Decay time; Time (ns); Counts")
 hist.SetStats(0)
 hist.Draw("HIST")

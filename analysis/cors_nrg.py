@@ -1,21 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import ROOT
 from scipy.interpolate import interp1d
-
-#Enable implicit multi-threading
-ROOT.ROOT.EnableImplicitMT()
 
 gamma_count=np.ones((1000,99))
 gamma_errors=np.ones((1000,99))
 bins_ed=np.logspace(0.5*np.log10(1e-1), np.log10(1e1), 100)
 
+
+#Leer los arrays de cada chubasco
 for i in range(1000):
-    i = i + 1  # Adjusting index to match file naming convention
-    p_dat=np.load(f"nrg/particles-{i:04d}.npy")
+    i = i + 1
+    p_dat=np.load(f"eas/particle-{i:04d}.npy")
     p_arr=np.array(p_dat.tolist())
-    p_arr = p_arr[p_arr[:, 0] == 13]
-    
+    #Solo muones
+    #p_arr = p_arr[p_arr[:, 0] == 13]
+    #Muones y antimuones
+    p_arr = p_arr[(p_arr[:, 0] == 13) | (p_arr[:, 0] == -13)]
     hist, bin_edges = np.histogram(p_arr[:,5], bins=bins_ed)
     bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
     bin_widths = np.diff(bin_edges)
@@ -35,7 +35,7 @@ for i in range(99):
 
 #plt.errorbar(bin_centers, gamma_mean, yerr=gamma_std, fmt='o', label='Mean Spectrum with Std Dev')
 plt.step(bin_centers, gamma_mean, where='mid', label='Mean Spectrum', color='blue')
-#plt.fill_between(bin_centers, gamma_mean - gamma_std, gamma_mean + gamma_std, color='blue', alpha=0.3, label='Standard Deviation')
+plt.fill_between(bin_centers, gamma_mean - gamma_std, gamma_mean + gamma_std, color='blue', alpha=0.3, label='Standard Deviation')
 plt.xscale('log')
 plt.yscale('log')
 plt.xlabel('Energy (GeV)')
@@ -66,11 +66,21 @@ energy_sampler = interp1d(cdf, bin_centers, kind='linear', bounds_error=False, f
 random_uniforms = np.random.uniform(size=10000)
 sampled_energies = energy_sampler(random_uniforms)
 
+# from sampled energies, filter those between 0.1 and 1 GeV
+filtered_energies = sampled_energies[(sampled_energies > 0.1) & (sampled_energies < 1.0)]
+
+len_sampled = len(sampled_energies)
+len_filtered = len(filtered_energies)
+print(f"Total sampled energies: {len_sampled}")
+print(f"Filtered energies (0.1-1 GeV): {len_filtered}")
+
 np.savetxt("sampled_energies.dat", sampled_energies)
+np.savetxt("filtered_energies.dat", filtered_energies)
 
 #plot the sampled energies
 plt.figure(figsize=(10, 6))
-plt.hist(sampled_energies, bins=100, density=True, alpha=0.7, color='blue', label='Sampled Energies')
+plt.hist(sampled_energies, bins=100, density=True, alpha=0.3, color='blue', label='Sampled Energies')
+plt.hist(filtered_energies, bins=100, density=True, alpha=0.7, color='orange', label='Filtered Energies (0.1-1 GeV)')
 plt.xlabel('Energy (GeV)')
 plt.ylabel('Density')
 plt.title('Sampled Energy Distribution')

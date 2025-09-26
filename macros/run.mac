@@ -2,7 +2,10 @@
 /process/optical/cerenkov/setMaxBetaChange 10
 /process/optical/cerenkov/setTrackSecondariesFirst true
 
+/random/setSeeds 12345 67890
 /run/numberOfThreads 6
+
 /run/initialize
+/generator/deg 1
 /run/reinitializeGeometry
-/run/beamOn 100
+/run/beamOn 2
