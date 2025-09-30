@@ -84,7 +84,7 @@ void peaks(){
 
 
     /*
-    //Estudair un solo caso
+    //Estudiar un solo caso
     TH1D *hist = new TH1D("hist", "Decay Time; Time (ns); Counts", 5000, 0, 20000);
     for (Long64_t i = 0; i < nentries; i++) {
         b_evt->GetEntry(i);

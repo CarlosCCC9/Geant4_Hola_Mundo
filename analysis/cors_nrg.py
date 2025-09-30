@@ -40,7 +40,7 @@ plt.xscale('log')
 plt.yscale('log')
 plt.xlabel('Energy (GeV)')
 plt.ylabel('dN/dE (counts per GeV)')
-plt.title('Mean Energy Spectrum of Particles')
+plt.title('Mean Energy Spectrum of Muons')
 plt.legend()
 plt.grid(True, which="both", ls="--", lw=0.5)
 plt.savefig("nrg_spectrum.png", dpi=300)
@@ -66,8 +66,8 @@ energy_sampler = interp1d(cdf, bin_centers, kind='linear', bounds_error=False, f
 random_uniforms = np.random.uniform(size=10000)
 sampled_energies = energy_sampler(random_uniforms)
 
-# from sampled energies, filter those between 0.1 and 1 GeV
-filtered_energies = sampled_energies[(sampled_energies > 0.1) & (sampled_energies < 1.0)]
+# from sampled energies, filter those between 0.01 and 1 GeV
+filtered_energies = sampled_energies[(sampled_energies > 0.01) & (sampled_energies < 1.0)]
 
 len_sampled = len(sampled_energies)
 len_filtered = len(filtered_energies)
