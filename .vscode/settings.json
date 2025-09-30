@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.icc": "cpp",
-        "analysis.C": "cpp"
+        "analysis.C": "cpp",
+        "peaks.C": "cpp"
     }
 }

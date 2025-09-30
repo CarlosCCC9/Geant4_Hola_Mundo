@@ -19,6 +19,7 @@ generator::generator(){
     m_particleGun->SetParticlePosition(G4ThreeVector(30*cm,0,1.1*m));
     m_particleGun->SetParticleMomentumDirection(G4ThreeVector(0,0,-1));
 
+    /*
     //Initialize the energy array to zero
     for(G4int i=0; i<4173; i++){
         nrg[i] = 0;
@@ -37,7 +38,7 @@ generator::generator(){
         i++;
     }
     datafile.close();
-
+    */
 }
 
 generator::~generator(){ 
@@ -47,19 +48,19 @@ generator::~generator(){
 void generator::GeneratePrimaries(G4Event *anEvent){
 
         //Randomly sample an energy from the array
-        G4int index = G4UniformRand() * 4174;
-        if(index >= 4174) index = 4173;
-        G4double energy = nrg[index];
+        //G4int index = G4UniformRand() * 4174;
+        //if(index >= 4174) index = 4173;
+        //G4double energy = nrg[index];
         //Set the particle energy
-        m_particleGun->SetParticleEnergy(energy*GeV);
+        //m_particleGun->SetParticleEnergy(energy*GeV);
 
         //Nrg random between 0.03 and 1 GeV
-        /*
+        
         G4double minEnergy = 0.03*GeV;
         G4double maxEnergy = 1*GeV;
         G4double energy = G4UniformRand() * (maxEnergy - minEnergy) + minEnergy;
         m_particleGun->SetParticleEnergy(energy);
-        */
+        
 
         //Position
         G4double rad = 1.*m;
@@ -109,7 +110,7 @@ void generator::GeneratePrimaries(G4Event *anEvent){
                     x=(x*2.*rad)-rad;
                     y=(y*2.*rad)-rad;
                 }
-                G4cout<<"x: "<<x<<" y: "<<y<<" nrg: "<<energy<<G4endl;
+                //G4cout<<"x: "<<x<<" y: "<<y<<" nrg: "<<energy<<G4endl;
                 m_particleGun->SetParticlePosition(G4ThreeVector(x,y,z_ini));
 
                 while(check == false){
